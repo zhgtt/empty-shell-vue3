@@ -6,8 +6,6 @@ defineOptions({
   name: 'App',
 })
 
-console.log('hihihihi')
-
 /**
  * @description - 水印设置项
  */
