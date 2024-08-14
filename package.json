@@ -12,23 +12,22 @@
     "prepare": "simple-git-hooks"
   },
   "dependencies": {
-    "naive-ui": "^2.39.0",
     "vue": "^3.4.37",
     "vue-router": "^4.4.3"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.25.0",
-    "@types/node": "^22.1.0",
-    "@unocss/eslint-plugin": "^0.61.9",
+    "@antfu/eslint-config": "^2.25.1",
+    "@types/node": "^22.2.0",
+    "@unocss/eslint-plugin": "^0.62.1",
     "@vitejs/plugin-vue": "^5.1.2",
-    "eslint": "^9.8.0",
+    "eslint": "^9.9.0",
     "eslint-plugin-format": "^0.1.2",
     "git-commit-msg-linter": "^5.0.8",
-    "lint-staged": "^15.2.8",
+    "lint-staged": "^15.2.9",
     "simple-git-hooks": "^2.11.1",
     "typescript": "^5.5.4",
-    "unocss": "^0.61.9",
-    "unplugin-vue-components": "^0.27.3",
+    "unocss": "^0.62.1",
+    "unplugin-vue-components": "^0.27.4",
     "vite": "^5.4.0",
     "vue-tsc": "^2.0.29"
   },

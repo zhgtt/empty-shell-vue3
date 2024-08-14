@@ -3,6 +3,10 @@ import antfu from '@antfu/eslint-config'
 export default antfu(
   // 设置项，指定启用哪些插件和 ignores
   {
+    // 开启 vue、typescript 的检查（可以不配置，因为默认是支持并开启的）
+    // vue: true,
+    // typescript: true,
+
     // 开启 unocss 的检查
     unocss: true,
 
@@ -21,13 +25,14 @@ export default antfu(
   {
     rules: {
       // 'style/semi': [1, 'always'], // 强制末尾加分号，默认为 'error'；（该规则取默认的就行，无需设置，这里只是做个示例）
-      'unused-imports/no-unused-imports': 'warn',
     },
   },
 
   // 设置指定文件的规则
   {
     files: ['src/**/*.vue'],
-    rules: {},
+    rules: {
+      'vue/valid-template-root': 'warn', // 是否允许模板内容为空，默认是 error
+    },
   },
 )

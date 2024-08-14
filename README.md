@@ -10,7 +10,47 @@
 
 ### 🤫 项目目录
 
-- 基本的目录文件已形成，每个文件都有自己的作用和分工，如 src/router、src/store、src/api、src/plugins、src/hooks、src/typings 等等；
+```bash
+├──📁.vscode                # 项目 vscode 的配置
+├──📁public                 # 静态资源 该目录下静态资源应该避免被项目 js 引用
+├──📁src                    # 源代码
+│   ├──📁api                    # 接口请求
+│   │   ├──📁methods                # 业务接口文件，所有的接口都放在这里
+│   ├──📁assets                 # 图片，字体等静态资源
+│   ├──📁components             # 项目公共组件
+│   │   ├──📁common                 # 全局使用的公共组件，如 主题切换、logo 等
+│   │   ├──📁custom                 # 自定义全局组件，如 SvgIcon 等
+│   ├──📁constants              # 项目全局常量
+│   ├──📁hooks                  # 项目全局 hooks 钩子函数
+│   ├──📁layouts                # 页面布局组件
+│   ├──📁plugins                # 项目中使用到的插件配置，如 UI 组件库、国际化 等
+│   │   ├──📄assets.ts              # 引入第三方插件的静态资源
+│   ├──📁router                 # 路由
+│   ├──📁store                  # 状态管理
+│   ├──📁styles                 # 全局 css 文件
+│   ├──📁utils                  # 项目公共方法、工具
+│   ├──📁views                  # 页面文件
+│   │   ├──📁_builtin               # 一些内置的页面组件放在这里，如 404 等
+│   ├──📄App.vue                # 入口页面
+│   └──📄main.ts                # 入口 加载组件 初始化
+├──📁vite-config            # vite 拆分出的配置项，如 proxy、plugins 等
+├──📄.env.development       # 环境变量（开发环境）
+├──📄.env.production        # 环境变量（生产环境）
+├──📄.env.test              # 环境变量（测试环境）
+├──📄.gitignore             # 定义 git 过滤的文件
+├──📄eslint.config.js       # eslint 配置文件
+├──📄index.html             # 主页面
+├──📄package.json           # 依赖、脚本文件
+├──📄pnpm-lock.yaml         # pnpm 本地依赖
+├──📄README.md              # 项目说明文件
+├──📄tsconfig.app.js        # tsconfig 对项目应用的配置文件
+├──📄tsconfig.json          # tsconfig 配置文件
+├──📄tsconfig.node.json     # tsconfig 对 node 环境配置文件
+└──📄uno.config.t           # unocss 配置文件
+└──📄vite.config.ts         # vite 配置文件
+```
+
+- 基本的目录文件已形成，每个文件都有自己的作用和分工，如 src/plugins、src/hooks、src/typings 等等；
 - 每个文件都有对应的注释，方便理解；
 - [TODO] 对核心文件 `vite.config.ts` 和 `main.ts` 进行了封装以及详细的注释；
 
@@ -33,6 +73,7 @@
 ### 🙄 基础插件
 
 - [TODO] 支持一些常用必备的插件，如 unocss、vue-router、pinia、alovajs 等；
+- [TODO] 还支持了一些拓展插件，如 nprogress 进度条等；
 - [TODO] 对一些插件进行了封装，比如路由管理，接口请求等，只需要继续二次开发即可；
 
 ### 😶 基础组件
