@@ -1,13 +1,12 @@
-// declare global {
-//   namespace JSX {
-//     interface IntrinsicElements {
-//       'micro-app': {
-//         name: string
-//         url: string
-//         iframe: boolean
-//         // 其他可能的属性
-//         // onEvent?: (event: CustomEvent) => void; // 如果需要监听事件
-//       }
-//     }
-//   }
-// }
+// 这里 export 一个空对象，是为了防止 ts 不识别下面代码定义的类型
+export {}
+
+declare global {
+  /**
+   * @description: 定义挂载在 window 下的实例对象
+   */
+  export interface Window {
+    // 加载进度条 nprogress
+    NProgress?: import('nprogress').NProgress
+  }
+}
