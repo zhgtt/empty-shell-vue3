@@ -1,33 +1,34 @@
 /**
  * vite 相关的所有插件都在这里定义 & 注册
  */
-import process from 'node:process';
-import path from 'node:path';
-import type { PluginOption } from 'vite';
-import vue from '@vitejs/plugin-vue';
-import UnoCss from 'unocss/vite';
-import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
+import process from 'node:process'
+import path from 'node:path'
+import type { PluginOption } from 'vite'
+import vue from '@vitejs/plugin-vue'
+import vueJsx from '@vitejs/plugin-vue-jsx'
+import UnoCss from 'unocss/vite'
+import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 /**
  * 以下是和 按需自动引入 相关的插件
  * @plugin unplugin-vue-components - 插件除支持自动引入 第三方 UI 组件外，也支持自动引入 src/components 下的所有组件，组件中需要定义 name
  */
-import Components from 'unplugin-vue-components/vite';
+import Components from 'unplugin-vue-components/vite'
 // import {  } from 'unplugin-vue-components/resolvers' // 引入所支持的 UI 组件库的解析器
 
 /**
  * @description: 封装 vite 插件的引入和注册
  * @param viteEnv - vite 环境变量
- * @param isBuild - 是否为打包状态，默认为 false
+ * @param isBuild - 是否为打包状态，默认为 false（目前还用不到）
  */
-export function setupVitePlugins(viteEnv: Env.ImportMeta, isBuild = false) {
-  // console.log('isBuild ====', viteEnv.BASE_URL, isBuild)
+export function setupVitePlugins(viteEnv: Env.ImportMeta) {
   // 获取环境变量
-  const { VITE_ICON_LOCAL_PREFIX = 'local-icon' } = viteEnv;
+  const { VITE_ICON_LOCAL_PREFIX = 'local-icon' } = viteEnv
 
-  const localIconPath = path.join(process.cwd(), 'src/assets/svg-icons');
+  const localIconPath = path.join(process.cwd(), 'src/assets/svg-icons')
 
   const vitePlugins: (PluginOption | PluginOption[])[] = [
     vue(),
+    vueJsx(), // 支持 jsx 书写组件；📢 注意：需要在 tsconfig.app.json 中配置 jsxImportSource 属性，然后再重启编辑器，防止编写时出现类型错误
     UnoCss(),
 
     /**
@@ -53,7 +54,7 @@ export function setupVitePlugins(viteEnv: Env.ImportMeta, isBuild = false) {
       inject: 'body-last',
       customDomId: '__SVG_LOCAL_ICONS__',
     }),
-  ];
+  ]
 
-  return vitePlugins;
+  return vitePlugins
 }

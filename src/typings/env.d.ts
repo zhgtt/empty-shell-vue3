@@ -3,7 +3,7 @@
  */
 declare namespace Env {
   // 声明路由模式，history | hash
-  type RouterHistoryMode = 'history' | 'hash';
+  type RouterHistoryMode = 'history' | 'hash'
 
   // 声明 Env.ImportMeta 类型
   interface ImportMeta {

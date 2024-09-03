@@ -2,41 +2,54 @@
 /**
  * 封装 图标 组件，支持 自定义 svg 图标、以及引入各大图标库，如 iconify 等
  */
-import { type CSSProperties, computed, useAttrs } from 'vue';
-import { Icon } from '@iconify/vue';
+import { type CSSProperties, computed, useAttrs } from 'vue'
+import { Icon } from '@iconify/vue'
+import type { IIconBase } from '@icon-park/vue-next/es/runtime'
+import { IconPark } from '@icon-park/vue-next/es/all'
 
-// 定义组件 ts 类型
+/**
+ * @description: 重新定义 IconPark 的属性类型
+ * @key theme - 图标主题，支持 'outline' | 'filled' | 'two-tone' | 'multi-color'；默认为 outlined
+ * @key fill - 图标颜色，多色的图标就传 数组
+ * @key size - 图标大小，默认为 1em（16px），📢 注意：这里会被 class 或者 style 定义的样式所覆盖
+ *
+ * @类型解释: Pick<> - 提取某些属性，组成新的类型
+ */
+type NewIIconBase = Pick<IIconBase, 'theme' | 'fill' | 'size'>
+
+// 定义组件属性类型
 interface Props {
-  type: 'local' | 'iconify' // 图标类型，默认为 local
+  type?: 'local' | 'iconify' | 'icon-park' // 图标类型，默认为 local
   name: string // 图标名称
+  iconOption?: NewIIconBase // icon-park 配置项
 }
 
 defineOptions({
   name: 'SvgIcon',
   inheritAttrs: false, // 不继承父组件的任何属性
-});
+})
 
 const props = withDefaults(defineProps<Props>(), {
   type: 'local',
-});
+})
 
 // 获取组件的内置属性
-const attrs = useAttrs();
+const attrs = useAttrs()
 const bindAttrs = computed<{ class: string, style: CSSProperties }>(() => {
   return {
     class: (attrs.class as string) || '',
     style: (attrs.style as CSSProperties) || '',
-  };
-});
+  }
+})
 
-// 根据 props.name 获取项目中的图标
+// 定义本地项目中的图标 name
 const symbolId = computed(() => {
-  const { VITE_ICON_LOCAL_PREFIX: prefix } = import.meta.env; // 前缀名称，可在 env 中自定义
+  const { VITE_ICON_LOCAL_PREFIX: prefix } = import.meta.env // 前缀名称，可在 env 中自定义
 
-  const iconName = props.name || 'no-icon';
+  const iconName = props.name || 'no-icon'
 
-  return `#${prefix}-${iconName}`;
-});
+  return `#${prefix}-${iconName}`
+})
 </script>
 
 <template>
@@ -51,8 +64,11 @@ const symbolId = computed(() => {
   <template v-if="type === 'iconify'">
     <Icon :icon="name" v-bind="bindAttrs" />
   </template>
+
+  <!-- IconPark 图标库 -->
+  <template v-if="type === 'icon-park'">
+    <IconPark :type="name" v-bind="{ ...iconOption, ...bindAttrs }" />
+  </template>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
