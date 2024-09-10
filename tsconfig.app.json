@@ -19,6 +19,9 @@
       "~/*": ["./*"]
     },
     "resolveJsonModule": true,
+
+    // 🐸 引入 unplugin-vue-router 的类型，防止报错
+    "types": ["unplugin-vue-router/client"],
     "allowImportingTsExtensions": true,
 
     /* Linting */

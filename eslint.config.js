@@ -32,7 +32,7 @@ export default antfu(
        * @key ignoreComments - 表示是否忽略注释，默认为 false，表示不忽略
        * 更多参数查看文档 https://eslint.org/docs/latest/rules/max-len
        *
-       * 📢 注意: @antfu 官方不限制长度，且不支持自动格式化折行，只能自己手动折行
+       * 🆎 @antfu 官方不限制长度，且不支持自动格式化折行，只能自己手动折行
        */
       'max-len': ['error', { code: 120, ignoreComments: true }],
     },

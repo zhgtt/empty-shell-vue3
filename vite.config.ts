@@ -1,5 +1,5 @@
 import process from 'node:process'
-import { URL, fileURLToPath } from 'node:url'
+import { fileURLToPath, URL } from 'node:url'
 import { defineConfig, loadEnv } from 'vite'
 // 引入自定义的模块
 import { setupVitePlugins } from './vite-config/plugins'
@@ -23,7 +23,7 @@ export default defineConfig(({ mode, command }) => {
 
     resolve: {
       /**
-       * @description: 配置路径别名；📢 注意：配置之后需要在 tsconfig.app.json 中添加 paths，再重启编辑器，以便 Typescript 能够识别到这些路径
+       * @description: 配置路径别名；🆎 配置之后需要在 tsconfig.app.json 中添加 paths，再重启编辑器，以便 Typescript 能够识别到这些路径
        * @function URL() - 是一个构造函数，相对于 import.meta.url 解析当前路径，返回一个 URL 格式的字符串
        * @param import.meta.url - 获取当前文件的 url
        *

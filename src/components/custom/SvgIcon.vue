@@ -1,17 +1,17 @@
 <script setup lang="ts">
+import { IconPark } from '@icon-park/vue-next/es/all'
+import { Icon } from '@iconify/vue'
+import type { IIconBase } from '@icon-park/vue-next/es/runtime'
 /**
  * 封装 图标 组件，支持 自定义 svg 图标、以及引入各大图标库，如 iconify 等
  */
-import { type CSSProperties, computed, useAttrs } from 'vue'
-import { Icon } from '@iconify/vue'
-import type { IIconBase } from '@icon-park/vue-next/es/runtime'
-import { IconPark } from '@icon-park/vue-next/es/all'
+import type { CSSProperties } from 'vue'
 
 /**
  * @description: 重新定义 IconPark 的属性类型
  * @key theme - 图标主题，支持 'outline' | 'filled' | 'two-tone' | 'multi-color'；默认为 outlined
  * @key fill - 图标颜色，多色的图标就传 数组
- * @key size - 图标大小，默认为 1em（16px），📢 注意：这里会被 class 或者 style 定义的样式所覆盖
+ * @key size - 图标大小，默认为 1em（16px），🆎 这里会被 class 或者 style 定义的样式所覆盖
  *
  * @类型解释: Pick<> - 提取某些属性，组成新的类型
  */
