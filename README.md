@@ -1,11 +1,11 @@
 # Vue3 空壳子项目
 
-| 📢 **说明**
+> 📢 **说明**
 
 1. 学习项目之一。。
 2. 主要借鉴学习 [soybean-admin](https://github.com/soybeanjs/soybean-admin)，这是个优秀的项目；
 3. 该项目主要包含一些基础的配置项和插件，是一个能拿来直接使用的模板，继续开发和完善；
-4. [个人笔记 - 语雀](https://www.yuque.com/u12312393/olga7q/fdpuvywr14oommou?singleDoc#)
+4. [个人笔记 - 语雀]()
 
 ---
 
@@ -54,7 +54,7 @@
 └──📄vite.config.ts         # vite 配置文件
 ```
 
-| 📢 **说明**
+> 📢 **说明**
 
 1. 基本的目录文件已形成，每个文件都有自己的作用和分工，如 `src/plugins`、`src/hooks`、`src/typings` 等等；
 2. 每个文件都有对应的注释，方便理解；

@@ -1,7 +1,8 @@
 <script setup lang="ts">
 /**
  * @description: unplugin-vue-router 的插件之一，用于自定义当前页面配置，比如自定义 name、redirect（重定向）、meta、alias 等属性，会和自动生成的路由合并，🆎 会覆盖定义的公共的属性；
- * 🆎 这里因为使用了 unplugin-auto-import 插件，无需自行引入
+ *
+ * 🆎 这里因为使用了 unplugin-auto-import 插件，已经全局引入了
  */
 
 // 🆎 与 vue-router 中的 RouteRecordRaw 类型做了一个合并
@@ -17,7 +18,7 @@ definePage({
 const router = useRouter()
 
 function hanleClick() {
-  router.push('/')
+  router.push('/demo/about')
 }
 </script>
 

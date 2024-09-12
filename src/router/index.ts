@@ -1,11 +1,13 @@
 /**
  * 对 路由 进行配置和封装，可以在 env 中自定义设置路由模式，默认是 history
  */
+import type { App } from 'vue'
+
 import { createRouter, createWebHashHistory, createWebHistory, type RouterHistory } from 'vue-router'
 
 import { routes } from 'vue-router/auto-routes' // 这个就是自动生成的 typed-router.d.ts 文件中定义的类型，🆎 需要在 tsconfig.app.json 中添加 types，否则会提示 ts 语法错误
 
-import type { App } from 'vue'
+import { createRouterGuard } from './guard' // 路由监控相关
 
 // 🆎 添加全局的重定向路由，建议在运行的时候添加重定向，这样不会 typed-router.d.ts 自动生成
 // routes.push({
@@ -52,5 +54,6 @@ export const router = createRouter(
  */
 export async function setupRouter(app: App) {
   app.use(router)
+  createRouterGuard(router)
   await router.isReady() // 等待路由加载完毕，它是个异步函数，返回一个 promise
 }

@@ -1,11 +1,13 @@
 <script setup lang="ts">
-import { IconPark } from '@icon-park/vue-next/es/all'
-import { Icon } from '@iconify/vue'
-import type { IIconBase } from '@icon-park/vue-next/es/runtime'
 /**
  * 封装 图标 组件，支持 自定义 svg 图标、以及引入各大图标库，如 iconify 等
  */
 import type { CSSProperties } from 'vue'
+
+import { Icon } from '@iconify/vue'
+
+import type { IIconBase } from '@icon-park/vue-next/es/runtime'
+import { IconPark } from '@icon-park/vue-next/es/all'
 
 /**
  * @description: 重新定义 IconPark 的属性类型

@@ -1,0 +1,9 @@
+export * as GlobalBreadcrumb from './global-breadcrumb/index.vue' // 面包屑
+export * as GlobalContent from './global-content/index.vue' // 内容展示
+export * as GlobalFooter from './global-footer/index.vue' // 底部展示
+export * as GlobalHeader from './global-header/index.vue' // 顶部展示
+export * as GlobalLogo from './global-logo/index.vue' // logo
+export * as GlobalMenu from './global-menu/index.vue' // 菜单展示
+export * as GlobalSearch from './global-search/index.vue' // 搜索
+export * as GlobalSidebar from './global-sidebar/index.vue' // 侧边栏
+export * as GlobalTab from './global-tab/index.vue' // 标签页
