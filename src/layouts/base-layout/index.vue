@@ -1,8 +1,8 @@
 <script setup lang="ts">
 /**
- * @description: 基础布局
+ * 基础布局容器
  */
-import { GlobalContent } from '../modules'
+import { GlobalContent, GlobalFooter, GlobalHeader, GlobalSidebar } from '../modules'
 
 defineOptions({
   name: 'BaseLayout',
@@ -10,7 +10,19 @@ defineOptions({
 </script>
 
 <template>
-  <GlobalContent />
+  <div class="flex">
+    <!-- 顶部导航 -->
+    <GlobalHeader />
+
+    <!-- 侧边栏 -->
+    <GlobalSidebar />
+
+    <!-- 主体内容 -->
+    <GlobalContent />
+
+    <!-- 底部内容 -->
+    <GlobalFooter />
+  </div>
 </template>
 
 <style scoped>

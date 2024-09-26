@@ -5,15 +5,8 @@ import type { App } from 'vue'
 
 import { createRouter, createWebHashHistory, createWebHistory, type RouterHistory } from 'vue-router'
 
-import { routes } from 'vue-router/auto-routes' // 这个就是自动生成的 typed-router.d.ts 文件中定义的类型，🆎 需要在 tsconfig.app.json 中添加 types，否则会提示 ts 语法错误
-
-import { createRouterGuard } from './guard' // 路由监控相关
-
-// 🆎 添加全局的重定向路由，建议在运行的时候添加重定向，这样不会 typed-router.d.ts 自动生成
-// routes.push({
-//   path: '/',
-//   redirect: '/',
-// })
+import { createVueRoutes } from './routes' // 约定式路由数据
+import { createRouterGuard } from './guard' // 路由监控相关逻辑
 
 // 获取环境变量
 const { VITE_ROUTER_HISTORY_MODE = 'history', VITE_BASE_URL } = import.meta.env
@@ -41,7 +34,7 @@ const historyCreatorMap: Record<Env.RouterHistoryMode, (base?: string) => Router
 export const router = createRouter(
   {
     history: historyCreatorMap[VITE_ROUTER_HISTORY_MODE](VITE_BASE_URL),
-    routes,
+    routes: createVueRoutes(),
   },
 )
 

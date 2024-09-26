@@ -1,13 +1,14 @@
 /**
- * @description: 对路由进行 全局监控、拦截，包含 进度条、title、路由处理 等
+ * 路由守卫、监控、拦截 相关逻辑
  */
 import type { Router } from 'vue-router'
-import { createProgressGuard } from './progress'
-import { createRouteGuard } from './route'
-import { createDocumentTitleGuard } from './title'
+import { createCommonRouteGuard } from './common'
+import { createAccessRouteGuard } from './access'
 
 export function createRouterGuard(router: Router) {
-  createProgressGuard(router)
-  createRouteGuard(router)
-  createDocumentTitleGuard(router)
+  /** 通用守卫配置 */
+  createCommonRouteGuard(router)
+
+  /** 权限守卫配置 */
+  createAccessRouteGuard(router)
 }

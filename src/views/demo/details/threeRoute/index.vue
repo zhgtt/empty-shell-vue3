@@ -1,15 +1,14 @@
 <script setup lang="ts">
 definePage({
-  name: 'home',
+  // name: 'home',
   meta: {
-    title: '首页',
-    description: '主页面',
+    title: '三级路由',
   },
 })
 </script>
 
 <template>
-  首页面
+  三级路由页面
 </template>
 
 <style scoped>

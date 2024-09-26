@@ -9,7 +9,7 @@
 definePage({
   name: 'demo',
   meta: {
-    title: 'Demo 页面',
+    title: 'Demo 示例页面',
     icon: '',
     // ... 🆎 自定义其他属性，路由转换菜单 的逻辑中需要这些属性
   },
@@ -19,6 +19,12 @@ const router = useRouter()
 
 function hanleClick() {
   router.push('/demo/about')
+}
+function hanleClick11() {
+  router.push('/demo/details/threeRoute')
+}
+function hanleClick33() {
+  router.push('/demo/details')
 }
 </script>
 
@@ -34,6 +40,14 @@ function hanleClick() {
   </RouterLink>
   <button @click="hanleClick">
     跳转 about 页面
+  </button>
+
+  <button @click="hanleClick33">
+    跳转 详情 页面
+  </button>
+
+  <button @click="hanleClick11">
+    跳转 三级路由 页面
   </button>
 
   <br>

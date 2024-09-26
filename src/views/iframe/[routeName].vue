@@ -1,13 +1,11 @@
 <script setup lang="ts">
 /**
- * 底部展示区域
+ * iframe 嵌套页面，所有 iframe 嵌套的路由都会跳转到这里
  */
-defineOptions({
-  name: 'GlobalFooter',
-})
 </script>
 
 <template>
+  哈哈哈
 </template>
 
 <style scoped>

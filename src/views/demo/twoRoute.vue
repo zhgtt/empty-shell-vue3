@@ -1,14 +1,14 @@
 <script setup lang="ts">
 definePage({
-  name: 'demo-about',
+  // name: 'home',
   meta: {
-    title: 'Demo 关于页面',
+    title: '二级路由',
   },
 })
 </script>
 
 <template>
-  关于页面
+  二级菜单
 </template>
 
 <style scoped>
